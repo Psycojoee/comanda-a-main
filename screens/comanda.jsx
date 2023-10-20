@@ -8,10 +8,11 @@ export default function Comanda({navigation}) {
         <View style={styles.containerBetween}>
             <View style={styles.header}>
                 <View>
-                    <Text>Olá,</Text>
-                    <Text style={styles.title}>João Carlos</Text>
+                    <Text>Seja Bem Vindo,</Text>
+                    <Text style={styles.title}>Rei do Drift</Text>
                 </View>
-                <MaterialIcons name="exit-to-app" size={24} color="black" />
+                <MaterialIcons name="exit-to-app" size={24} color="black" 
+                    onPress={() => navigation.navigate ('Home')} />
             </View>
 
             <View>

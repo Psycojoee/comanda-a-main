@@ -4,13 +4,13 @@ import { styles } from '../style';
 export default function Login({navigation}) {
     return (
         <View style={styles.container}>
-            <Image style={styles.imagem} source={require('../assets/burguer.jpg')} />
-            <Text>Sistema</Text>
+            <Image style={styles.imagem} source={require('../assets/chevette.png')} />
+            <Text>Sistema Para</Text>
             <Text style={styles.title}>Comanda</Text>
-            <TextInput style={styles.input} placeholder='e-mail' />
-            <TextInput style={styles.input} placeholder='senha' secureTextEntry />
+            <TextInput style={styles.input} placeholder='E-mail' />
+            <TextInput style={styles.input} placeholder='Senha' secureTextEntry />
             <TouchableOpacity onPress={() => navigation.navigate('Comanda')}>
-                <Text style={styles.button}>entrar</Text>
+                <Text style={styles.button}>Entrar</Text>
             </TouchableOpacity>
             
         </View>

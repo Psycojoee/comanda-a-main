@@ -3,18 +3,18 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FCFBFF',
+        backgroundColor: '#363636', //Cor da página inicial
         alignItems: 'center',
         justifyContent: 'center',
     },
     containerBetween: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f5f5f5', // Cor da página do login (onde está seja bem vindo)
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 20,
     },
-    title: {
+    title: { //Definição da fonte e do estilo
         fontSize: 24,
         fontWeight: 'bold',
     },
@@ -26,8 +26,9 @@ export const styles = StyleSheet.create({
         borderRadius: 4
     },
     button: {
-        backgroundColor: '#121A2C',
-        color: '#FFBA26',
+        backgroundColor: '#1E90FF', //cor do botão
+        color: '#000',
+        fontWeight:'bold',
         padding: 8,
         paddingHorizontal: 48,
         borderRadius: 4,

@@ -2,33 +2,33 @@
     "produtos": [
         {
           "id": "1",
-          "nome": "Classic Burger",
-          "imagepath": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=1299&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "preco": 9.99
+          "nome": "Roda BBS Aro 16",
+          "imagepath": "https://images.tcdn.com.br/img/img_prod/1002931/jogo_rodas_bbs_golf_polo_corolla_aro_18x80_5x100_preto_semi_brilho_34794911_1_5a223adffa3bdbb10a4ac6fbc39d55a4.jpg",
+          "preco": 6390.00
         },
         {
           "id": "2",
-          "nome": "Cheeseburger",
-          "imagepath": "http://example.com/cheeseburger.jpg",
-          "preco": 8.99
+          "nome": "Intake K&N",
+          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_741197-MLB52415404571_112022-O.webp",
+          "preco": 999.99
         },
         {
           "id": "3",
-          "nome": "Bacon Burger",
-          "imagepath": "http://example.com/bacon.jpg",
-          "preco": 10.99
+          "nome": "Abafador Esportivo 3,5''",
+          "imagepath": "https://d2r9epyceweg5n.cloudfront.net/stores/003/419/053/products/28791c4f-ff00-428e-b7cb-8fd69ee410271-0011c05b5719443b3a16891902956786-1024-1024.webp",
+          "preco": 369.99
         },
         {
           "id": "4",
-          "nome": "Mushroom Burger",
-          "imagepath": "http://example.com/mushroom.jpg",
-          "preco": 9.99
+          "nome": "Kit Turbo Chevette",
+          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_712781-MLB49973228283_052022-O.webp",
+          "preco": 3699.99
         },
         {
           "id": "5",
-          "nome": "BBQ Burger",
-          "imagepath": "http://example.com/bbq.jpg",
-          "preco": 11.99
+          "nome": "Kit Limpeza Automotiva",
+          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_673671-MLB52332474546_112022-O.webp",
+          "preco": 150.00
         }
       ]
     

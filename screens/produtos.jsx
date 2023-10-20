@@ -6,30 +6,21 @@ import CardProduto from '../components/card.js';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const produto = {
-    "id": 1,
-    "nome": "Bolo de Chocolate",
-    "imagePath": "https://img.freepik.com/free-photo/close-up-fancy-dessert_23-2150527565.jpg?t=st=1688655003~exp=1688658603~hmac=84829cbb20876216de8d7e408378e6b1c44686855c3d414865b445e20bb5f7b4&w=1380",
-    "preco": 8
-}
-
 export default function Produtos() {
     const [produtos, setProdutos] = useState ([])
 
     useEffect( () => {
-        axios.get ("http://localhost:3000/produtos")
+        axios.get ("http://localhost:3000/produtos") //Realizando a importação da API
             .then (resp => setProdutos (resp.data))
     }, [] )
-
-
 
     return (
         <View style={styles.containerBetween}>
             <View style={styles.header}>
-                <MaterialIcons name="arrow-back" size={24} color="black" />
+                <MaterialIcons name="arrow-back" size={24} color="black" onPress={() => navigation.navigate ('Comanda')} />
 
                 <View style={styles.box}>
-                    <Text>comanda</Text>
+                    <Text>Comanda</Text>
                     <Text style={styles.title}>2457</Text>
                 </View>
             </View>

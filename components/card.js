@@ -7,7 +7,7 @@ export default function CardProduto({ produto }) {
         <View style={styles.pedidos}>
 
             <View style={styles.cardProduto}>
-                <Image style={styles.thumb} source={{ uri: produto.imagePath }} />
+                <Image style={styles.thumb} source={{ uri: produto.imagepath }} />
 
                 <View style={styles.produtoData}>
                     <Text>{produto.nome}</Text>
