@@ -6,7 +6,7 @@ import CardProduto from '../components/card.js';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Produtos() {
+export default function Produtos({navigation}) {
     const [produtos, setProdutos] = useState ([])
 
     useEffect( () => {

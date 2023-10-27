@@ -30,6 +30,20 @@
           "imagepath": "https://http2.mlstatic.com/D_NQ_NP_673671-MLB52332474546_112022-O.webp",
           "preco": 150.00
         }
+      ],
+      "usuarios" : [
+        {
+          "id": "1",
+          "nome": "Thiago Marques",
+          "email": "thiago@fiap.com.br",
+          "senha": "1234"
+        },
+        {
+          "id": "2",
+          "nome": "Maria Joaquina",
+          "email": "maria@fiap.com.br",
+          "senha": "4321"
+        }
       ]
     
 }
