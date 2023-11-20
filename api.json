@@ -1,49 +1,120 @@
 {
-    "produtos": [
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Thiago Marques",
+      "email": "thiago@fiap.com.br",
+      "senha": "1234",
+      "endereco": "a",
+      "data": "a",
+      "medicamentos": [
         {
           "id": "1",
-          "nome": "Roda BBS Aro 16",
-          "imagepath": "https://images.tcdn.com.br/img/img_prod/1002931/jogo_rodas_bbs_golf_polo_corolla_aro_18x80_5x100_preto_semi_brilho_34794911_1_5a223adffa3bdbb10a4ac6fbc39d55a4.jpg",
-          "preco": 6390.00
+          "nome": "Medicamento Exemplo 1",
+          "horariosDeDosagem": "08:00, 14:00, 20:00",
+          "quantidade": "1 comprimido"
         },
         {
           "id": "2",
-          "nome": "Intake K&N",
-          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_741197-MLB52415404571_112022-O.webp",
-          "preco": 999.99
+          "nome": "Medicamento Exemplo 2",
+          "horariosDeDosagem": "09:00, 21:00",
+          "quantidade": "2 comprimidos"
         },
         {
-          "id": "3",
-          "nome": "Abafador Esportivo 3,5''",
-          "imagepath": "https://d2r9epyceweg5n.cloudfront.net/stores/003/419/053/products/28791c4f-ff00-428e-b7cb-8fd69ee410271-0011c05b5719443b3a16891902956786-1024-1024.webp",
-          "preco": 369.99
+          "id": "nzhdo9u1h",
+          "nome": "123",
+          "horariosDeDosagem": "1231",
+          "quantidade": "23"
         },
         {
-          "id": "4",
-          "nome": "Kit Turbo Chevette",
-          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_712781-MLB49973228283_052022-O.webp",
-          "preco": 3699.99
+          "id": "6fbin226k",
+          "nome": "a",
+          "horariosDeDosagem": "b",
+          "quantidade": "c"
         },
         {
-          "id": "5",
-          "nome": "Kit Limpeza Automotiva",
-          "imagepath": "https://http2.mlstatic.com/D_NQ_NP_673671-MLB52332474546_112022-O.webp",
-          "preco": 150.00
-        }
-      ],
-      "usuarios" : [
-        {
-          "id": "1",
-          "nome": "Thiago Marques",
-          "email": "thiago@fiap.com.br",
-          "senha": "1234"
-        },
-        {
-          "id": "2",
-          "nome": "Maria Joaquina",
-          "email": "maria@fiap.com.br",
-          "senha": "4321"
+          "id": "ldhmzy2rn",
+          "nome": "teste",
+          "horariosDeDosagem": "08:00 10:00 20:00",
+          "quantidade": "3 comprimidos"
         }
       ]
-    
+    },
+    {
+      "id": "2",
+      "nome": "Maria Joaquina",
+      "email": "maria@fiap.com.br",
+      "senha": "4321",
+      "endereco": "Rua tal de tal",
+      "data": "20/10/2001",
+      "medicamentos": [
+        {
+          "id": "1",
+          "nome": "Medicamento Exemplo 1",
+          "horariosDeDosagem": "08:00, 14:00, 20:00",
+          "quantidade": "1 comprimido"
+        },
+        {
+          "id": "2",
+          "nome": "Medicamento Exemplo 2",
+          "horariosDeDosagem": "09:00, 21:00",
+          "quantidade": "2 comprimidos"
+        }
+      ]
+    },
+    {
+      "nome": "a",
+      "email": "a",
+      "senha": "a",
+      "endereco": "a",
+      "data": "a",
+      "medicamentos": [
+        {
+          "id": "555wxuysr",
+          "nome": "a",
+          "horariosDeDosagem": "a",
+          "quantidade": "a"
+        },
+        {
+          "id": "ziolmhk75",
+          "nome": "b",
+          "horariosDeDosagem": "b",
+          "quantidade": "b"
+        }
+      ],
+      "id": "9mU6zaV"
+    },
+    {
+      "nome": "b",
+      "email": "b",
+      "senha": "b",
+      "endereco": "b",
+      "data": "b",
+      "medicamentos": [
+        {
+          "id": "l7vvidk4c",
+          "nome": "Viagra",
+          "horariosDeDosagem": "10:00 12:00 14:00",
+          "quantidade": "2 comprimidos"
+        }
+      ],
+      "id": "BUXINmH"
+    },
+    {
+      "nome": "e",
+      "email": "e",
+      "senha": "e",
+      "endereco": "e",
+      "data": "e",
+      "medicamentos": [
+        {
+          "id": "6bobd4110",
+          "nome": "e",
+          "horariosDeDosagem": "e",
+          "quantidade": "e"
+        }
+      ],
+      "id": "Hf_HSrB"
+    }
+  ]
 }

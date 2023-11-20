@@ -1,41 +1,58 @@
-import { Image, Text, TextInput, TouchableOpacity, View, ViewBase } from 'react-native';
-import { styles } from '../style';
-import { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../context/AuthContext';
+import { styles } from '../style';
 
-export default function Login({navigation}) {
-    const {login} = useContext(AuthContext)
-    const [email, setEmail] = useState ("")
-    const [senha, setSenha] = useState ("")
-    const [erro, setErro] = useState ("")
 
-    async function handleLogin(){
-        if (await login({email,senha})){
-            navigation.navigate ('Comanda')
-        } else{
-            setErro("email ou senha inválida")
+export default function Login({ navigation }) {
+    const { login } = useContext(AuthContext);
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [erro, setErro] = useState("");
+
+    async function handleLogin() {
+        try {
+            const success = await login({ email, senha });
+            if (success) {
+                navigation.navigate('Comanda');
+            } else {
+                setErro("Email ou senha inválida");
+            }
+        } catch (error) {
+            setErro("Ocorreu um erro. Tente novamente.");
         }
     }
 
+    const navigateToSignUp = () => {
+        navigation.navigate('SignUp'); 
+    };
+
     return (
         <View style={styles.container}>
-            <Image style={styles.imagem} source={require('../assets/chevette.png')} />
-            <Text>Sistema Para</Text>
-            <Text style={styles.title}>Comanda</Text>
+            <Text style={styles.title}>Login</Text>
             <TextInput 
                 style={styles.input} 
                 placeholder='E-mail' 
-                value ={email} 
-                onChangeText={setEmail}/>
+                value={email} 
+                onChangeText={setEmail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+            />
             <TextInput 
                 style={styles.input} 
-                placeholder='Senha' value= {senha} 
+                placeholder='Senha' 
+                value={senha} 
                 onChangeText={setSenha}
-                secureTextEntry />
-            <TouchableOpacity onPress={handleLogin}>
-                <Text style={styles.button}>Entrar</Text>
+                secureTextEntry 
+                autoCapitalize="none"
+            />
+            <TouchableOpacity onPress={handleLogin} style={styles.button}>
+                <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
-            <text style={styles.erro}>{erro}</text>
+            <TouchableOpacity onPress={navigateToSignUp} style={styles.button}>
+                <Text style={styles.buttonText}>Cadastre-se</Text>
+            </TouchableOpacity>
+            {erro ? <Text style={styles.error}>{erro}</Text> : null}
         </View>
     );
 }

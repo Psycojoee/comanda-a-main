@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#363636', //Cor da página inicial
+        backgroundColor: '#fff', //Cor da página inicial
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -13,6 +13,17 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 20,
+    },
+    containerTitulo: {
+        alignItems: 'center',
+    },
+    containerTest: {
+        flex: 1,
+        backgroundColor: '#f5f5f5', // Cor da página do login (onde está seja bem vindo)
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 200,
+        flexDirection:'column',
     },
     title: { //Definição da fonte e do estilo
         fontSize: 24,
@@ -124,7 +135,7 @@ export const styles = StyleSheet.create({
     scroll: {
         width: '100%',
     },
-    erro:{
+    error:{
         color: 'red'
     }
 
