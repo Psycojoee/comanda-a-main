@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { AuthContext } from '../context/AuthContext.js';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -9,29 +9,39 @@ export default function Comanda({ navigation }) {
     const [medicamentos, setMedicamentos] = useState([]);
     const [erro, setErro] = useState("");
 
-    useEffect(() => {
+    const carregarMedicamentos = useCallback(() => {
         if (user && user.nome) {
             fetch('http://localhost:3000/usuarios')
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Dados da API:', data); // Log da resposta da API
-                    const usuarioEncontrado = data.find(u => u.nome === user.nome);
-                    console.log('Usuário Encontrado:', usuarioEncontrado); // Log do usuário encontrado
-
-                    if (usuarioEncontrado && usuarioEncontrado.medicamentos) {
-                        setMedicamentos(usuarioEncontrado.medicamentos);
+                    // Ajuste: Verifique se a resposta é um array ou contém a chave 'usuarios'
+                    const listaUsuarios = Array.isArray(data) ? data : data.usuarios;
+                    if (listaUsuarios) {
+                        const usuarioEncontrado = listaUsuarios.find(u => u.nome === user.nome);
+                        if (usuarioEncontrado && usuarioEncontrado.medicamentos) {
+                            setMedicamentos(usuarioEncontrado.medicamentos);
+                        } else {
+                            setErro("Usuário não encontrado ou sem medicamentos.");
+                        }
                     } else {
-                        setErro("Usuário não encontrado ou sem medicamentos.");
+                        setErro("Erro na estrutura dos dados da API.");
                     }
                 })
                 .catch(error => {
                     console.error('Erro ao buscar dados:', error);
                     setErro("Erro ao carregar os medicamentos. Detalhes: " + error.message);
                 });
-        } else {
-            setErro("Usuário não identificado.");
         }
     }, [user]);
+
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', carregarMedicamentos);
+
+        // Carregar medicamentos na montagem inicial
+        carregarMedicamentos();
+
+        return unsubscribe;
+    }, [navigation, carregarMedicamentos]);
 
     return (
         <View style={styles.containerBetween}>
