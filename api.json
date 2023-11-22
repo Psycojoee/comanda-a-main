@@ -60,61 +60,8 @@
           "horariosDeDosagem": "09:00, 21:00",
           "quantidade": "2 comprimidos"
         }
-      ]
-    },
-    {
-      "nome": "a",
-      "email": "a",
-      "senha": "a",
-      "endereco": "a",
-      "data": "a",
-      "medicamentos": [
-        {
-          "id": "555wxuysr",
-          "nome": "a",
-          "horariosDeDosagem": "a",
-          "quantidade": "a"
-        },
-        {
-          "id": "ziolmhk75",
-          "nome": "b",
-          "horariosDeDosagem": "b",
-          "quantidade": "b"
-        }
       ],
-      "id": "9mU6zaV"
-    },
-    {
-      "nome": "b",
-      "email": "b",
-      "senha": "b",
-      "endereco": "b",
-      "data": "b",
-      "medicamentos": [
-        {
-          "id": "l7vvidk4c",
-          "nome": "Viagra",
-          "horariosDeDosagem": "10:00 12:00 14:00",
-          "quantidade": "2 comprimidos"
-        }
-      ],
-      "id": "BUXINmH"
-    },
-    {
-      "nome": "e",
-      "email": "e",
-      "senha": "e",
-      "endereco": "e",
-      "data": "e",
-      "medicamentos": [
-        {
-          "id": "6bobd4110",
-          "nome": "e",
-          "horariosDeDosagem": "e",
-          "quantidade": "e"
-        }
-      ],
-      "id": "Hf_HSrB"
+      "id": "JUR6XaE"
     }
   ]
 }
