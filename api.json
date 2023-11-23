@@ -13,42 +13,6 @@
           "nome": "Medicamento Exemplo 1",
           "horariosDeDosagem": "08:00, 14:00, 20:00",
           "quantidade": "1 comprimido"
-        },
-        {
-          "id": "2",
-          "nome": "Medicamento Exemplo 2",
-          "horariosDeDosagem": "09:00, 21:00",
-          "quantidade": "2 comprimidos"
-        },
-        {
-          "id": "nzhdo9u1h",
-          "nome": "123",
-          "horariosDeDosagem": "1231",
-          "quantidade": "23"
-        },
-        {
-          "id": "6fbin226k",
-          "nome": "a",
-          "horariosDeDosagem": "b",
-          "quantidade": "c"
-        },
-        {
-          "id": "ldhmzy2rn",
-          "nome": "teste",
-          "horariosDeDosagem": "08:00 10:00 20:00",
-          "quantidade": "3 comprimidos"
-        },
-        {
-          "id": "lx41ygk6n",
-          "nome": "nao sei",
-          "horariosDeDosagem": "nao sei",
-          "quantidade": "nao sei"
-        },
-        {
-          "id": "imuwkqgl6",
-          "nome": "aa",
-          "horariosDeDosagem": "aa",
-          "quantidade": "aa"
         }
       ]
     },
@@ -80,14 +44,7 @@
       "senha": "a",
       "endereco": "a",
       "data": "a",
-      "medicamentos": [
-        {
-          "id": "0rrnd7mu3",
-          "nome": "a",
-          "horariosDeDosagem": "a",
-          "quantidade": "a"
-        }
-      ],
+      "medicamentos": [],
       "id": "JFa4p7N"
     }
   ]

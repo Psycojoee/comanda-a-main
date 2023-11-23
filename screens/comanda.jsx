@@ -9,37 +9,51 @@ export default function Comanda({ navigation }) {
     const [medicamentos, setMedicamentos] = useState([]);
     const [erro, setErro] = useState("");
 
-    const carregarMedicamentos = useCallback(() => {
+    const carregarMedicamentos = useCallback(async () => {
         if (user && user.nome) {
-            fetch('http://localhost:3000/usuarios')
-                .then(response => response.json())
-                .then(data => {
-                    // Ajuste: Verifique se a resposta é um array ou contém a chave 'usuarios'
-                    const listaUsuarios = Array.isArray(data) ? data : data.usuarios;
-                    if (listaUsuarios) {
-                        const usuarioEncontrado = listaUsuarios.find(u => u.nome === user.nome);
-                        if (usuarioEncontrado && usuarioEncontrado.medicamentos) {
-                            setMedicamentos(usuarioEncontrado.medicamentos);
-                        } else {
-                            setErro("Usuário não encontrado ou sem medicamentos.");
-                        }
-                    } else {
-                        setErro("Erro na estrutura dos dados da API.");
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro ao buscar dados:', error);
-                    setErro("Erro ao carregar os medicamentos. Detalhes: " + error.message);
-                });
+            try {
+                const response = await fetch('http://localhost:3000/usuarios');
+                const data = await response.json();
+                const listaUsuarios = Array.isArray(data) ? data : data.usuarios;
+                const usuarioEncontrado = listaUsuarios.find(u => u.nome === user.nome);
+                if (usuarioEncontrado && usuarioEncontrado.medicamentos) {
+                    setMedicamentos(usuarioEncontrado.medicamentos);
+                } else {
+                    setErro("Usuário não encontrado ou sem medicamentos.");
+                }
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+                setErro("Erro ao carregar os medicamentos. Detalhes: " + error.message);
+            }
         }
     }, [user]);
 
+    const excluirMedicamento = async (idMedicamento) => {
+        if (user && user.id) {
+            try {
+                const response = await fetch(`http://localhost:3000/usuarios/${user.id}`);
+                const usuario = await response.json();
+                const medicamentosAtualizados = usuario.medicamentos.filter(m => m.id !== idMedicamento);
+                
+                await fetch(`http://localhost:3000/usuarios/${user.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ ...usuario, medicamentos: medicamentosAtualizados }),
+                });
+
+                setMedicamentos(medicamentosAtualizados);
+            } catch (error) {
+                console.error('Erro ao excluir medicamento:', error);
+                setErro("Erro ao excluir medicamento. Detalhes: " + error.message);
+            }
+        }
+    };
+
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', carregarMedicamentos);
-
-        // Carregar medicamentos na montagem inicial
         carregarMedicamentos();
-
         return unsubscribe;
     }, [navigation, carregarMedicamentos]);
 
@@ -47,8 +61,9 @@ export default function Comanda({ navigation }) {
         <View style={styles.containerBetween}>
             <View style={styles.header}>
                 <View>
-                    <Text>Seja Bem Vindo,</Text>
-                    <Text style={styles.title}>{user ? user.nome : ''}</Text>
+                    <Text style={styles.title}>Olá,</Text>
+                    <Text style={styles.titleComanda}>{user ? user.nome : ''}</Text>
+                    <Text style={styles.titleMedicamento}>Medicamentos para tomar</Text>
                 </View>
                 <MaterialIcons name="exit-to-app" size={24} color="black"
                     onPress={() => navigation.navigate('Home')} />
@@ -59,18 +74,21 @@ export default function Comanda({ navigation }) {
                     <Text style={styles.error}>{erro}</Text>
                 ) : (
                     medicamentos.map((medicamento, index) => (
-                        <Text key={index} style={styles.input}>
-                            {medicamento.nome} - {medicamento.horariosDeDosagem} - {medicamento.quantidade}
-                        </Text>
+                        <View key={index} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 10 }}>
+                            <Text style={styles.inputLogin}>
+                                {medicamento.nome} - {medicamento.horariosDeDosagem} - {medicamento.quantidade}
+                            </Text>
+                            <TouchableOpacity onPress={() => excluirMedicamento(medicamento.id)}>
+                                <MaterialIcons name="close" size={24} color="black" />
+                            </TouchableOpacity>
+                        </View>
                     ))
                 )}
             </ScrollView>
 
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Produtos')}>
+            <TouchableOpacity style={styles.buttonComanda} onPress={() => navigation.navigate('Produtos')}>
                 <Text style={styles.buttonText}>Cadastrar novo medicamento</Text>
             </TouchableOpacity>
-
-            <Text>Obrigado pela preferência</Text>
         </View>
     );
 }

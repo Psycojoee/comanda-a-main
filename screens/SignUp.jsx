@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { styles } from '../style';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -11,7 +11,7 @@ const SignUp = ({ navigation }) => {
     senha: '',
     endereco: '',
     data: '',
-    medicamentos: []  // Adiciona medicamentos aqui
+    medicamentos: []  
   });
   const [erro, setErro] = useState("");
 
@@ -39,17 +39,21 @@ const SignUp = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.containerTest}>
-      <MaterialIcons name="exit-to-app" size={24} color="black" style = {styles.title}
-        onPress={() => navigation.navigate('Home')} />
+    <View style={styles.containerCadastro}>
+      <Text style={styles.titleLogin}>Cadastro</Text>
+      <View style={styles.headerCadastro}>
+        <MaterialIcons name="exit-to-app" size={24} color="black"
+          onPress={() => navigation.navigate('Home')} />
+      </View>
+
       <TextInput
-        style={styles.input}
+        style={styles.inputCadastro}
         placeholder="Nome"
         onChangeText={(value) => handleInputChange('nome', value)}
         value={userDetails.nome}
       />
       <TextInput
-        style={styles.input}
+        style={styles.inputCadastro}
         placeholder="Email"
         onChangeText={(value) => handleInputChange('email', value)}
         value={userDetails.email}
@@ -57,28 +61,32 @@ const SignUp = ({ navigation }) => {
         autoCapitalize="none"
       />
       <TextInput
-        style={styles.input}
+        style={styles.inputCadastro}
         placeholder="Senha"
-        value={userDetails.senha}
         onChangeText={(value) => handleInputChange('senha', value)}
+        value={userDetails.senha}
         secureTextEntry
       />
       <TextInput
-        style={styles.input}
+        style={styles.inputCadastro}
         placeholder="Endereço"
-        value={userDetails.endereco}
         onChangeText={(value) => handleInputChange('endereco', value)}
+        value={userDetails.endereco}
         autoCapitalize="none"
       />
       <TextInput
-        style={styles.input}
+        style={styles.inputCadastro}
         placeholder="Data"
-        value={userDetails.data}
         onChangeText={(value) => handleInputChange('data', value)}
+        value={userDetails.data}
         autoCapitalize="none"
       />
-      {erro !== "" && <Text style={styles.error}>{erro}</Text>} {/* Exibe a mensagem de erro */}
-      <Button title="Cadastrar" onPress={handleSubmit}/>
+      
+      {erro !== "" && <Text style={styles.error}>{erro}</Text>}
+
+      <TouchableOpacity onPress={handleSubmit} style={styles.buttonLogin}>
+        <Text style={styles.buttonText}>Cadastrar</Text>
+      </TouchableOpacity>
     </View>
   );
 };

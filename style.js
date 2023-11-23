@@ -3,16 +3,24 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff', //Cor da página inicial
+        backgroundColor: '#DCDCDC', //Cor da página inicial
         alignItems: 'center',
         justifyContent: 'center',
     },
     containerBetween: {
         flex: 1,
-        backgroundColor: '#f5f5f5', // Cor da página do login (onde está seja bem vindo)
+        backgroundColor: '#DCDCDC', // Cor da página do login (onde está seja bem vindo)
+        alignItems: 'center',
+        padding: 20,
+            
+    },
+    containerCadastro: {
+        flex: 1,
+        backgroundColor: '#DCDCDC', // Cor da página do login (onde está seja bem vindo)
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 20,
+        padding: 300,
+        right: 91,
     },
     containerTitulo: {
         alignItems: 'center',
@@ -29,6 +37,21 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
     },
+    titleComanda: { //Definição da fonte e do estilo
+        fontSize: 30,
+        fontWeight: 'bold',
+    },
+    titleMedicamento: { //Definição da fonte e do estilo
+        fontSize: 25,
+        left: 30,
+        top: 30,
+        fontWeight: 'bold',
+    },
+    titleLogin: { //Definição da fonte e do estilo
+        fontSize: 24,
+        fontWeight: 'bold',
+        top: -50,
+    },
     input: {
         padding: 8,
         borderColor: 'gray',
@@ -36,8 +59,51 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 4
     },
+    inputLogin: {
+        padding: 8,
+        borderColor: 'black',
+        borderWidth: 2,
+        marginTop: 10,
+        borderRadius: 4,
+        color:'fff',
+    },
+    inputCadastro: {
+        padding: 8,
+        borderColor: 'black',
+        borderWidth: 2,
+        borderRadius: 4,
+        color:'fff',
+        margin: 5,
+    },
     button: {
-        backgroundColor: '#1E90FF', //cor do botão
+        backgroundColor: '#A52A2A', //cor do botão
+        color: '#000',
+        fontWeight:'bold',
+        padding: 8,
+        paddingHorizontal: 48,
+        borderRadius: 4,
+        marginTop: 20,
+    },
+    buttonComanda: {
+        backgroundColor: '#000', //cor do botão
+        color: '#000',
+        fontWeight:'bold',
+        padding: 8,
+        paddingHorizontal: 48,
+        borderRadius: 4,
+        marginTop: -30,
+    },
+    buttonCadastro: {
+        backgroundColor: '#000', //cor do botão
+        color: '#000',
+        fontWeight:'bold',
+        padding: 8,
+        paddingHorizontal: 48,
+        borderRadius: 4,
+        marginTop: 20,
+    },
+    buttonLogin: {
+        backgroundColor: '#000', //cor do botão
         color: '#000',
         fontWeight:'bold',
         padding: 8,
@@ -46,19 +112,27 @@ export const styles = StyleSheet.create({
         marginTop: 20,
     },
     buttonText: {
-        color: '#FFBA26',
+        color: '#FFF',
     },
     header: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin: 20
+        margin: 20,
+    },
+    headerCadastro: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 0,
+        left: 150,
+        top:-250,
     },
     imagem: {
-        width: '100%',
-        height: 200,
-        position: 'absolute',
-        top: 0,
+        width: '45%',
+        height: 310,
+        position: 'relative',
+        top: -150,
     },
     box: {
         borderColor: '#121A2C',
@@ -97,10 +171,6 @@ export const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 4,
-    },
-    price: {
-        color: '#29A035',
-        fontSize: 18,
     },
     spinner: {
         flexDirection: 'row',

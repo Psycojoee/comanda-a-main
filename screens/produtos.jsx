@@ -1,6 +1,6 @@
 import { AuthContext } from '../context/AuthContext';
 import { MaterialIcons } from '@expo/vector-icons';
-import { View, TextInput, Button, Alert, ScrollView, Text, TouchableOpacity} from 'react-native';
+import { View, TextInput, Alert, ScrollView, Text, TouchableOpacity } from 'react-native';
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import { styles } from '../style';
@@ -67,39 +67,44 @@ export default function CadastroMedicamento({navigation}) {
     };
 
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <MaterialIcons name="exit-to-app" size={24} color="black" 
-                    onPress={() => navigation.navigate ('Comanda')} />
+         <View style={styles.containerBetween}>
+             <View style={styles.header}>
+                <View>
+
+                    <Text style={styles.title}>{user ? user.nome : ''}</Text>
+                </View>
+                <MaterialIcons name="exit-to-app" size={24} color="black"
+                    onPress={() => navigation.navigate('Comanda')} />
             </View>
-            <Text style={styles.title}>Login</Text>
+
+            <Text style={styles.title}>Cadastro de Medicamento</Text>
             <TextInput 
-                style={styles.input} 
+                style={styles.inputLogin} 
                 placeholder="Nome do Medicamento" 
                 onChangeText={setNome} 
                 value={nome} 
             />
             <TextInput
-                style={styles.input} 
+                style={styles.inputLogin} 
                 placeholder="Horários de Dosagem" 
                 onChangeText={setHorariosDeDosagem} 
                 value={horariosDeDosagem} 
             />
             <TextInput 
-                style={styles.input} 
+                style={styles.inputLogin} 
                 placeholder="Quantidade" 
                 onChangeText={setQuantidade} 
                 value={quantidade} 
                 keyboardType="numeric" 
             />
-            <Button style={styles.button}
-                title="Cadastrar Medicamento" 
-                onPress={handleSubmit} 
-            />
+
+            <TouchableOpacity onPress={handleSubmit} style={styles.buttonCadastro}>
+                <Text style={styles.buttonText}>Cadastrar Medicamento</Text>
+            </TouchableOpacity>
 
             <ScrollView>
                 {medicamentos.map((medicamento, index) => (
-                    <Text key={index} style={styles.input} >{medicamento.nome} - {medicamento.horariosDeDosagem} - {medicamento.quantidade}</Text>
+                    <Text key={index} style={styles.inputLogin} >{medicamento.nome} - {medicamento.horariosDeDosagem} - {medicamento.quantidade}</Text>
                 ))}
             </ScrollView>
         </View>

@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { AuthContext } from '../context/AuthContext';
 import { styles } from '../style';
-
 
 export default function Login({ navigation }) {
     const { login } = useContext(AuthContext);
@@ -29,9 +28,13 @@ export default function Login({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
+            <Image 
+                style={styles.imagem}
+                source={require('../assets/robozao.png')} 
+            />
+            <Text style={styles.titleLogin}>Login</Text>
             <TextInput 
-                style={styles.input} 
+                style={styles.inputLogin}
                 placeholder='E-mail' 
                 value={email} 
                 onChangeText={setEmail}
@@ -39,17 +42,17 @@ export default function Login({ navigation }) {
                 autoCapitalize="none"
             />
             <TextInput 
-                style={styles.input} 
+                style={styles.inputLogin}
                 placeholder='Senha' 
                 value={senha} 
                 onChangeText={setSenha}
                 secureTextEntry 
                 autoCapitalize="none"
             />
-            <TouchableOpacity onPress={handleLogin} style={styles.button}>
+            <TouchableOpacity onPress={handleLogin} style={styles.buttonLogin}>
                 <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={navigateToSignUp} style={styles.button}>
+            <TouchableOpacity onPress={navigateToSignUp} style={styles.buttonLogin}>
                 <Text style={styles.buttonText}>Cadastre-se</Text>
             </TouchableOpacity>
             {erro ? <Text style={styles.error}>{erro}</Text> : null}
