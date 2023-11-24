@@ -7,14 +7,7 @@
       "senha": "1234",
       "endereco": "a",
       "data": "a",
-      "medicamentos": [
-        {
-          "id": "1",
-          "nome": "Medicamento Exemplo 1",
-          "horariosDeDosagem": "08:00, 14:00, 20:00",
-          "quantidade": "1 comprimido"
-        }
-      ]
+      "medicamentos": []
     },
     {
       "id": "JUR6XaE",
@@ -46,6 +39,15 @@
       "data": "a",
       "medicamentos": [],
       "id": "JFa4p7N"
+    },
+    {
+      "nome": "Thiago",
+      "email": "thiago@fiap.com",
+      "senha": "1234",
+      "endereco": "rua 123",
+      "data": "22/11/1997",
+      "medicamentos": [],
+      "id": "L5d7Y09"
     }
   ]
 }
